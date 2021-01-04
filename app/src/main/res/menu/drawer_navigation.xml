@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Each item id should be same as in the nav_graph fragment id-->
+
+    <item
+        android:id="@+id/mainFragment"
+        android:icon="@drawable/ic_baseline_bubble_chart_24"
+        android:title="Dashboard" />
+
+<!--    <item-->
+<!--        android:id="@+id/ListofStationFragment"-->
+<!--        android:icon="@drawable/ic_launcher_background"-->
+<!--        android:title="PV Statistics \n(work in progress)" />-->
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_baseline_settings_applications_24"
+        android:title="Settings" />
+
+    <item
+        android:id="@+id/calibrationFragment"
+        android:icon="@drawable/ic_baseline_settings_backup_restore_24"
+        android:title="Calibration" />
+    <item
+        android:id="@+id/SolApp"
+        android:icon="@drawable/ic_solar_energy"
+        android:title="Our App for Solar Panels" />
+
+
+
+</menu>

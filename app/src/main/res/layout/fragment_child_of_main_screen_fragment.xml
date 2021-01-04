@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="HHHHHHHEEELLLLOOO"-->
+<!--        android:textColor="#1700ED"-->
+<!--        android:gravity="center">-->
+
+<!--    </TextView>-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@drawable/layout1"
+
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="5">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/topChartDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Forecast for 24 hours: (Σ= --kW)"
+                        android:textColor="@color/black">
+
+                    </TextView>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:layout_constraintVertical_chainStyle="spread"
+                tools:ignore="NotSibling" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/leftChartDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat"
+                    android:text="for tomorrow \n(Σ= --kW): 24 feb.">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/rightChartDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat"
+                    android:text="for after tomorrow \n(Σ= --kW): 25 feb."
+                    android:textColor="@color/black">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1">
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:layout_constraintVertical_chainStyle="spread"
+                    tools:ignore="NotSibling" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:layout_constraintVertical_chainStyle="spread"
+                    tools:ignore="NotSibling" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/layout2"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.0">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/hint_white"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat"
+                android:text="Max Wind Speed per period ">
+
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/maxwindin24hr"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat">
+
+            </TextView>
+            <TextView
+                android:id="@+id/maxwindfortomorrow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat">
+
+            </TextView>
+            <TextView
+                android:id="@+id/maxwindforaftertomorrow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/montserrat">
+
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/blue_special"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="10sp"
+                android:fontFamily="@font/montserrat"
+                android:text="for 24 hr ">
+
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="10sp"
+                android:fontFamily="@font/montserrat"
+                android:text="for tomorrow ">
+
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="10sp"
+                android:fontFamily="@font/montserrat"
+                android:text="for after tomorrow ">
+
+            </TextView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="110dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:background="@drawable/layout1"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout"-->
+<!--        app:layout_constraintVertical_bias="0.0">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="4">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Sunshine duration:"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp">-->
+
+<!--            </TextView>-->
+<!--        </LinearLayout>-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_margin="8dp"-->
+<!--            android:layout_weight="1">-->
+<!--            <TextView-->
+<!--                android:id="@+id/sunshineIndicatorBlockSUNRISE"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textSize="20sp"-->
+<!--                android:text="8:00"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:gravity="center"-->
+<!--                android:textFontWeight="1"-->
+<!--                android:fontFamily="@font/montserrat">-->
+
+<!--            </TextView>-->
+<!--            <TextView-->
+<!--                android:id="@+id/sunshineIndicatorBlockDURATION"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textSize="40sp"-->
+<!--                android:text="8hr"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:gravity="center"-->
+<!--                android:textFontWeight="1"-->
+<!--                android:fontFamily="@font/montserrat">-->
+
+<!--            </TextView>-->
+<!--            <TextView-->
+<!--                android:id="@+id/sunshineIndicatorBlockSUNSET"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:textSize="20sp"-->
+<!--                android:text="8:00"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:gravity="center"-->
+<!--                android:textFontWeight="1"-->
+<!--                android:fontFamily="@font/montserrat">-->
+
+<!--            </TextView>-->
+
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/black">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="4">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/calibrated_outputPower"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat"
+                android:textSize="60sp"
+                android:text="1000 W">
+
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#6A6A6A"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat"
+                android:textSize="14sp"
+                android:text="Calibrate forecasting power output of your current PV station, if needed">
+
+            </TextView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="40dp">
+            <io.feeeei.circleseekbar.CircleSeekBar
+                android:id="@+id/circleseekbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foregroundGravity="center"
+                app:wheel_reached_color="#05C324"
+                app:wheel_unreached_color="#8BA0AA"
+
+                />
+            <TextView
+                android:id="@+id/calibrate_coeff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat"
+                android:layout_alignLeft="@+id/circleseekbar"
+                android:layout_alignBottom="@+id/circleseekbar"
+                android:layout_alignRight="@+id/circleseekbar"
+                android:gravity="center"
+                android:textSize="35sp"
+                android:textColor="@color/white"
+                android:text="100">
+
+            </TextView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

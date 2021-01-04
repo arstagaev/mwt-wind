@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="192dp"
+    android:id="@+id/header_of_drawer"
+    android:background="@color/black"
+    android:gravity="center" >
+
+    <!--You can add the navigation drawer header contents here-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/header_drawer_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="My Wind Turbine"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/chosenPVStation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Current PV station: \n Nevada 1.3kW (W37.35, N50.04) "
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
