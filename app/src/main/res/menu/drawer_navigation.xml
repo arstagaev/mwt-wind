@@ -9,6 +9,11 @@
         android:icon="@drawable/ic_baseline_bubble_chart_24"
         android:title="Dashboard" />
 
+    <item
+        android:id="@+id/setPVStation"
+        android:icon="@drawable/ic_rural_house_with_wind_mill_svgrepo_com"
+        android:title="My Wind Turbine" />
+
 <!--    <item-->
 <!--        android:id="@+id/ListofStationFragment"-->
 <!--        android:icon="@drawable/ic_launcher_background"-->

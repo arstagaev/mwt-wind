@@ -19,24 +19,24 @@
             android:id="@+id/header_drawer_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="My Wind Turbine"
+            android:text="My Wind Turbine \n PRO"
             android:gravity="center"
             android:textColor="@android:color/white"
-            android:textSize="30sp"/>
+            android:textSize="25sp"/>
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="2">
         <TextView
             android:id="@+id/chosenPVStation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Current PV station: \n Nevada 1.3kW (W37.35, N50.04) "
+            android:text="Current Wind station: \n Nevada 1.3kW (W37.35, N50.04) "
             android:gravity="center"
             android:textColor="@android:color/white"
-            android:textSize="15sp"/>
+            android:textSize="10sp"/>
 
     </LinearLayout>
 

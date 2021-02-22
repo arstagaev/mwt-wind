@@ -9,7 +9,7 @@
     <item
         android:height="300dp"
         android:width="300dp"
-        android:drawable="@drawable/logomwt2"
+        android:drawable="@drawable/windturblogo_pro"
         android:gravity="center">
 
     </item>

@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:background="#000000">
 
-    <com.revolve44.mywindturbine.utils.LockableScrollView
+    <com.revolve44.mywindturbinepro.utils.LockableScrollView
         android:id="@+id/scrollViewFromFragmentConfirmStation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,15 +44,15 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="296dp"
-                    android:layout_height="21dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_width="348dp"
+                    android:layout_height="22dp"
 
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="4dp"
                     android:text="Maximum power of your Wind station [in Watts]"
                     android:textColor="@color/hint_white"
                     android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.253"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/nominalPowerOfStation">
 
@@ -133,7 +133,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="370dp"
                 android:layout_marginTop="10dp"
                 android:scrollbars="none"
                 android:background="@color/black_night"
@@ -157,11 +157,10 @@
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="196dp"
+                    android:layout_height="195dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView2">
 
@@ -176,7 +175,7 @@
                         />
 
                     <TextView
-                        android:id="@+id/calibrate_coeff1"
+                        android:id="@+id/rotordiameter_ofwindturbine"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_alignLeft="@+id/circleseekbar_rotordiameter"
@@ -186,23 +185,61 @@
                         android:gravity="center"
                         android:text="100"
                         android:textColor="@color/white"
-                        android:textSize="35sp">
+                        android:textSize="15sp">
 
                     </TextView>
-
-
                 </RelativeLayout>
+
+                <!--                <EditText-->
+<!--                    android:id="@+id/editText_rotor_diameter"-->
+<!--                    android:layout_width="194dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginStart="16dp"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:hint="meters"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="10sp"-->
+<!--                    android:inputType="numberDecimal"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout">-->
+
+<!--                </EditText>-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/editText_startup_wind_speed"-->
+<!--                    android:layout_width="129dp"-->
+<!--                    android:layout_height="38dp"-->
+<!--                    android:layout_marginStart="16dp"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/editText_rotor_diameter"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">-->
+
+<!--                </EditText>-->
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout2"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="208dp"
-                    android:layout_marginLeft="208dp"
-                    android:layout_marginTop="24dp"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="127dp"
+                    android:layout_height="112dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="100dp"
+                    app:layout_constraintStart_toEndOf="@+id/relativeLayout"
                     app:layout_constraintTop_toBottomOf="@+id/textView2">
 
+                    <TextView
+                        android:id="@+id/startup_windspeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignLeft="@+id/circleseekbar_startup_windspeed"
+                        android:layout_alignRight="@+id/circleseekbar_startup_windspeed"
+                        android:layout_alignBottom="@+id/circleseekbar_startup_windspeed"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:text="100"
+                        android:textColor="@color/white"
+                        android:textSize="30sp">
+
+                    </TextView>
                     <io.feeeei.circleseekbar.CircleSeekBar
                         android:id="@+id/circleseekbar_startup_windspeed"
                         android:layout_width="match_parent"
@@ -213,47 +250,34 @@
 
                         />
 
-                    <TextView
-                        android:id="@+id/calibrate_coeff2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignLeft="@+id/circleseekbar_startup_windspeed"
-                        android:layout_alignRight="@+id/circleseekbar_startup_windspeed"
-                        android:layout_alignBottom="@+id/circleseekbar_startup_windspeed"
-                        android:fontFamily="@font/montserrat"
-                        android:gravity="center"
-                        android:text="100"
-                        android:textColor="@color/white"
-                        android:textSize="35sp">
-
-                    </TextView>
-
 
                 </RelativeLayout>
 
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
+                    android:layout_marginTop="12dp"
                     android:gravity="center"
                     android:text="Rotor diameter \nof your wind turbine \n [meters]"
                     android:textColor="@color/hint_white"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/relativeLayout"
                     app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
                 </TextView>
 
                 <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
+                    android:layout_width="121dp"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="12dp"
                     android:gravity="center"
                     android:text="Start-up wind speed \n [m/s]"
                     android:textColor="@color/hint_white"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="@+id/relativeLayout2"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/relativeLayout2"
                     app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
 
@@ -282,7 +306,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-    </com.revolve44.mywindturbine.utils.LockableScrollView>
+    </com.revolve44.mywindturbinepro.utils.LockableScrollView>
 
 
 

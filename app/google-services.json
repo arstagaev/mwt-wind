@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "896497820733",
+    "project_id": "windturbinepro-f825f",
+    "storage_bucket": "windturbinepro-f825f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896497820733:android:ad851e32a9f87d7aebf654",
+        "android_client_info": {
+          "package_name": "com.revolve44.mywindturbine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896497820733-baqm4j7t337rfl0g9jn2tm8gpn6v07eh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUK_1kCy-Khq1NLem7xf7CmQ10n5IgkFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896497820733-baqm4j7t337rfl0g9jn2tm8gpn6v07eh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896497820733:android:ad851e32a9f87d7aebf654",
+        "android_client_info": {
+          "package_name": "com.revolve44.mywindturbinepro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896497820733-baqm4j7t337rfl0g9jn2tm8gpn6v07eh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUK_1kCy-Khq1NLem7xf7CmQ10n5IgkFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896497820733-baqm4j7t337rfl0g9jn2tm8gpn6v07eh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

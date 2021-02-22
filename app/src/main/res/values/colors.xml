@@ -8,14 +8,27 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="hint_white">#6E7075</color>
+    <color name="hint_white2">#727681</color>
     <color name="redx">#F80000</color>
-    <color name="orangex">#F89D00</color>
     <color name="greenx">#7AD32C</color>
+    <color name="toxic_green">#11FF00</color>
+    <color name="orangex">#FF9800</color>
 
     <color name="blue_special">#03A9F4</color>
 
-    <color name="black_night">#20242B</color>
-    <!--    <color name="morning">#20242B</color>-->
+<!--    <color name="black_night">#20242B</color>-->
+<!--    &lt;!&ndash;    <color name="morning">#20242B</color>&ndash;&gt;-->
+<!--    <color name="day_sun_zenith">#769CDD</color>-->
+<!--    <color name="evening">#BB584F</color>-->
+
+    <color name="black_spoke">#20242B</color>
+
+    <color name="black_night">#303030</color>
+    <color name="morning">#63779A</color>
     <color name="day_sun_zenith">#769CDD</color>
     <color name="evening">#BB584F</color>
+
+    <color name="chart_stroke">#0054FD</color>
+    <color name="chart_fill_mainchart">#075DC5</color>
+    <color name="chart_fill_otherchart">#860072FD</color>
 </resources>

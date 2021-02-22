@@ -137,6 +137,22 @@
                             </TextView>
 
                             <TextView
+                                android:id="@+id/day_indicator"
+                                android:layout_width="60dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/lastUpdatedtv"
+                                app:layout_constraintHorizontal_bias="0.522"
+                                android:textColor="@color/greenx"
+                                android:text="night"
+                                android:gravity="center"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/currentCity">
+
+                            </TextView>
+
+                            <TextView
                                 android:id="@+id/currentCity"
                                 android:layout_width="150dp"
                                 android:layout_height="23dp"

@@ -52,10 +52,17 @@
 
     </style>
 
-    <style name="AppTheme.splashScreenTheme" parent="AppTheme">
+    <style name="AppTheme.splashScreenThemePro" parent="AppTheme">
         <item name="drawerArrowStyle">@style/DrawerIconStyle</item>
         <!--&gt;>>>>>> experimental-->
         <item name="android:windowBackground">@drawable/splash_image</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi" tools:targetApi="lollipop">@color/black</item>
+    </style>
+
+    <style name="AppTheme.splashScreenThemeStandart" parent="AppTheme">
+        <item name="drawerArrowStyle">@style/DrawerIconStyle</item>
+        <!--&gt;>>>>>> experimental-->
+        <item name="android:windowBackground">@drawable/splash_image_standart</item>
         <item name="android:statusBarColor" tools:ignore="NewApi" tools:targetApi="lollipop">@color/black</item>
     </style>
 
