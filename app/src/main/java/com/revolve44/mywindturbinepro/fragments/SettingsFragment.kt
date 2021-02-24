@@ -18,9 +18,6 @@ import com.revolve44.mywindturbinepro.activity.MainActivity
 import com.revolve44.mywindturbinepro.storage.PreferenceMaestro
 import timber.log.Timber
 
-//import com.revolve44.solarpanelx.activity.MainActivity
-//import com.revolve44.solarpanelx.R
-//import com.revolve44.solarpanelx.activity.AddSolarStationActivity
 
 
 /**

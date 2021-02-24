@@ -18,7 +18,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.revolve44.mywindturbinepro.R
 import com.revolve44.mywindturbinepro.activity.MainActivity
-import com.revolve44.mywindturbinepro.forecastmachine.defineTimeOfDay
+import com.revolve44.mywindturbinepro.features.*
 import com.revolve44.mywindturbinepro.storage.PreferenceMaestro
 import com.revolve44.mywindturbinepro.utils.*
 import com.revolve44.mywindturbinepro.viewmodels.MainScreenViewModel

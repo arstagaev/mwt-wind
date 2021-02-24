@@ -6,12 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import com.revolve44.mywindturbinepro.R
 
-//import com.revolve44.solarpanelx.activity.MainActivity
-//import com.revolve44.solarpanelx.R
-
-
-
-
+/**
+ * Coming Soon will add
+ */
 class StatisticsFragment : Fragment(R.layout.fragment_statistics) {
 
 

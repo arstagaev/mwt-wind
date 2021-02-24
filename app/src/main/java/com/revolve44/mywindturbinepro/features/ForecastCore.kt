@@ -1,13 +1,14 @@
-package com.revolve44.mywindturbinepro.forecastmachine
+package com.revolve44.mywindturbinepro.features
 
 import com.revolve44.mywindturbinepro.storage.PreferenceMaestro
 import com.revolve44.mywindturbinepro.utils.TypeOfSky
-import com.revolve44.mywindturbinepro.utils.roundTo2decimials
-import com.revolve44.mywindturbinepro.utils.sqrtCustom
 import timber.log.Timber
 import kotlin.math.PI
 import kotlin.math.pow
 
+/**
+ * output: Watts
+ */
 fun getForecast(windSpeed: Float,timeZone: Long,timestamp: Long): Int {
     var curpowx =
             (((1.23 * PI * (PreferenceMaestro.radius).pow(2) * ((windSpeed).pow(3)) * 1 ) / 2).toFloat())
@@ -30,6 +31,9 @@ fun ForecastToWindSpeed(forecast: Float) : Float{
             sqrtCustom((2f*forecast)/(1.23*PI*(PreferenceMaestro.radius).pow(2)*0.5).toFloat(),3))
 }
 
+/**
+ * Needs for change color of sky
+ */
 fun defineTimeOfDay() : TypeOfSky{
     var typeOfSky: TypeOfSky = TypeOfSky.DAY
 
@@ -63,24 +67,3 @@ fun defineTimeOfDay() : TypeOfSky{
     return typeOfSky
 }
 
-
-
-//fun packer(arrayList: List<ListWithCoreofForecast>){
-//    var cloudcoeff = 0.0
-//    var timestamp : Long = 0
-//    var sunrise : Long = 0
-//    var sunset : Long = 0
-//    var timeZone : Long = 0
-//
-//
-//
-//
-//    for (i in arrayList){
-//        timestamp = i.dt.toLong()
-//        cloudcoeff = i.clouds.all.toDouble()
-//
-//        arrayX.add(timestamp+timeZone)
-//
-//    }
-//
-//}

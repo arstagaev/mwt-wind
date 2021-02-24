@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.MotionEvent
 import android.view.View
 import android.widget.*
@@ -16,9 +14,8 @@ import com.revolve44.mywindturbinepro.R
 import com.revolve44.mywindturbinepro.activity.AddSolarStationActivity
 import com.revolve44.mywindturbinepro.activity.MainActivity
 import com.revolve44.mywindturbinepro.storage.PreferenceMaestro
-import com.revolve44.mywindturbinepro.utils.LockableScrollView
-import com.revolve44.mywindturbinepro.utils.roundTo1decimials
-import com.revolve44.mywindturbinepro.utils.roundTo2decimials
+import com.revolve44.mywindturbinepro.features.LockableScrollView
+import com.revolve44.mywindturbinepro.features.roundTo1decimials
 //import com.revolve44.solarpanelx.activity.MainActivity
 //import com.revolve44.solarpanelx.activity.AddSolarStationActivity
 //import com.revolve44.solarpanelx.storage.PreferenceMaestro
@@ -60,8 +57,6 @@ class LastConfirmFragment : Fragment(R.layout.fragment_confirm_station) {
         currencySpinner = view.findViewById(R.id.currencySpinner)
         pricePerkWh = view.findViewById(R.id.pricePerkWh)
 
-//        editTextRotorDiameter = view.findViewById(R.id.editText_rotor_diameter)
-//        editTextStartupWindSpeed = view.findViewById(R.id.editText_startup_wind_speed)
 
         //circle seekbars with textviews
         circleSeekBarRotorDiameter = view.findViewById(R.id.circleseekbar_rotordiameter)
@@ -306,34 +301,4 @@ class LastConfirmFragment : Fragment(R.layout.fragment_confirm_station) {
 
         }
     }
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        Timber.i("attach Called")
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Timber.i("oncreate Called")
-    }
-    override fun onResume() {
-        super.onResume()
-        loadCharacteristicsFromPreferences()
-        Timber.i("onResume Called")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Timber.i("onPause Called")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Timber.i("onStop Called")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Timber.i("onDestroy Called")
-    }
-
 }

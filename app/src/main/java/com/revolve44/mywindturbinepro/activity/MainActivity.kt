@@ -24,13 +24,20 @@ import com.revolve44.mywindturbinepro.R
 import com.revolve44.mywindturbinepro.repository.WindRepository
 import com.revolve44.mywindturbinepro.storage.PreferenceMaestro
 import com.revolve44.mywindturbinepro.utils.Constants.Companion.IS_PRO_VERSION
-import com.revolve44.mywindturbinepro.utils.blinkATextView
-import com.revolve44.mywindturbinepro.utils.gradientAnimation2
-import com.revolve44.mywindturbinepro.utils.listOfColor
+import com.revolve44.mywindturbinepro.features.blinkATextView
+import com.revolve44.mywindturbinepro.features.gradientAnimation2
+import com.revolve44.mywindturbinepro.features.listOfColor
 import com.revolve44.mywindturbinepro.viewmodels.MainScreenViewModel
 import com.revolve44.mywindturbinepro.viewmodels.ViewModelProviderFactory
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
+
+/**
+ *
+This Activity needs for showing forecast of charts, calibration of forecast, settings
+
+ */
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -65,18 +72,14 @@ class MainActivity : AppCompatActivity() {
         firstLaunch()
 
         initFirebaseAnalytics()
-
         setContentView(R.layout.activity_main)
-        //supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        //supportActionBar?.
+
         initNavigation()
         initToggleInActionBar()
         textColorChanged()
         navDrawerBlink()
         listenerForChangeColorOfHeaderText()
         switchBetweenVersion()
-//        initActionBarandDrawerView()
-//        initNavController()
 
         val repository = WindRepository(application)
         val viewModelProviderFactory = ViewModelProviderFactory(application, repository)
@@ -162,16 +165,7 @@ class MainActivity : AppCompatActivity() {
         chosenStation = headerView.findViewById(R.id.chosenPVStation)
         //mainNavDrawer.addDrawerListener(DrawerLayout.DrawerListener)
 
-
-
-
         navController = findNavController(R.id.main_nav_host)
-//        appBarConfiguration = AppBarConfiguration(
-//            setOf(R.id.mainFragment, R.id.ListofStationFragment,
-//                R.id.CalibrationFragment,R.id.SettingsFragment),mainNavDrawer
-//        )
-        //setupActionBarWithNavController(navController,appBarConfiguration)
-        //navigationView.setupWithNavController(navController)
 
         navigationView.setNavigationItemSelectedListener {
             when (it.itemId) {
@@ -216,19 +210,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onDrawerOpened(drawerView: View) {
-                //Called when a drawer has settled in a completely open state.
-                //The drawer is interactive at this point.
-                // If you have 2 drawers (left and right) you can distinguish
-                // them by using id of the drawerView. int id = drawerView.getId();
-                // id will be your layout's id: for example R.id.left_drawer
-                //blink header
-//                blinkATextView(
-//                    headerDrawerTitle,
-//                    listOfColor(PreferenceMaestro.pickedColorofToolbarTitle),
-//                    Color.BLACK,
-//                    listOfColor(PreferenceMaestro.pickedColorofToolbarTitle),
-//                    1200
-//                )
 
 
             }
@@ -297,28 +278,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-
-//    private fun initActionBarandDrawerView() {
-//
-//
-//
-//        //mainNavDrawer
-//        toolbar.navigationIcon = null
-//
-//
-//
-//        titleofActionBar = findViewById(R.id.actionbarTitle)
-//
-//        val navigationView: NavigationView = findViewById<View>(R.id.main_navigation_view) as NavigationView
-//        val headerView: View = navigationView.inflateHeaderView(R.layout.navigation_header)
-//        headerOfDrawer = headerView.findViewById(R.id.header_of_drawer)
-//        headerDrawerTitle = headerView.findViewById(R.id.header_drawer_title)
-//        chosenStation = headerView.findViewById(R.id.chosenPVStation)
-//
-//
-//    }
-
     fun showProgressBar(labelOfActionBar: String){
         titleofActionBar = findViewById(R.id.actionbarTitle)
         titleofActionBar.text = labelOfActionBar
@@ -348,12 +307,7 @@ class MainActivity : AppCompatActivity() {
                 main_drawer_layout.closeDrawer(GravityCompat.START)
             }
             else -> {
-                //if (numOfClickOnBackPress==2){
                 super.onBackPressed() //If drawer is already in closed condition then go back
-//
-//                }else{
-//                    Snackbar.make(findViewById(android.R.id.content),"Tap again, to exit",Snackbar.LENGTH_LONG).show()
-//                }
             }
         }
     }

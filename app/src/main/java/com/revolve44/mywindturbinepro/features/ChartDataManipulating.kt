@@ -1,4 +1,4 @@
-package com.revolve44.mywindturbinepro.utils
+package com.revolve44.mywindturbinepro.features
 
 import com.github.mikephil.charting.components.AxisBase
 import com.github.mikephil.charting.formatter.IAxisValueFormatter
@@ -10,20 +10,6 @@ import timber.log.Timber
 import java.util.*
 import kotlin.collections.ArrayList
 
-
-fun chartDataHandler(arrayList: ArrayList<Float>, rangeX0 : Int, rangeX1 : Int): ArrayList<Float> {
-    var arrayListOUTPUT : ArrayList<Float> = ArrayList()
-    for (i in (arrayList.size*rangeX0)/5+1..(arrayList.size*rangeX1)/5){
-        arrayListOUTPUT.add(arrayList.get(i))
-
-    }
-
-    Timber.i("vvv* $arrayListOUTPUT")
-
-    return arrayListOUTPUT
-}
-
-//forecastDataset: ArrayList<Float>,
 /**
  * ->input:
  * timestamps[],  forecasts[], num (num is number of chart which we fill our array on output)
@@ -32,11 +18,10 @@ fun chartDataHandler(arrayList: ArrayList<Float>, rangeX0 : Int, rangeX1 : Int):
  * right sorted part of array forecasts[] for define chart
  */
 fun chartDataSort(timestamps: ArrayList<Long>, forecasts: ArrayList<Float>, jumpAboveArray : Int): ArrayList<Float> {
-    //var repeater = 0
+
     Timber.i("chartDatasort inputput jump array is "+jumpAboveArray + "forecast size "+forecasts.size)
     var arrayListOUTPUT: ArrayList<Float> = ArrayList()
-    //xxx
-    //var jumpAboveArray = 0
+
 
     var countdown = (8-(unxtoHr(timestamps.get(0)) / 3)) + 8*jumpAboveArray
 
@@ -74,13 +59,9 @@ fun chartDataSort(timestamps: ArrayList<Long>, forecasts: ArrayList<Float>, jump
  * right sorted part of array forecasts[] for first chart in special container (FirstChartDataTransitor)
  */
 fun chartDatasortforFirstChart( timestamps: ArrayList<Long>, forecasts: ArrayList<Float>) : FirstChartDataTransitor {
-    //var repeater = 0
+
     var dateOUTPUT: ArrayList<String> = ArrayList()
     var forecastOUTPUT: ArrayList<Float> = ArrayList()
-    //xxx
-    //var jumpAboveArray = 0
-
-    //var countdown = (8-(unxtoHr(timestamps.get(0))/3)) + 8*jumpAboveArray
 
     for (i in 0..7){
 
@@ -96,10 +77,7 @@ fun chartDatasortforFirstChart( timestamps: ArrayList<Long>, forecasts: ArrayLis
         }
 
         forecastOUTPUT.add(forecasts.get(i))
-//        dateOUTPUT.add()timestamps.get(i)
-//
-//        //for (z in countdown..timestamps.)
-//        arrayListOUTPUT.add(forecasts.get(i))
+
 
     }
     var magicContainer = FirstChartDataTransitor(dateOUTPUT,forecastOUTPUT)
@@ -109,9 +87,7 @@ fun chartDatasortforFirstChart( timestamps: ArrayList<Long>, forecasts: ArrayLis
 /** Unix timestamp to hour INTEGER format */
 
 fun unxtoHr(timestamp : Long): Int {
-    //SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-//    val sdf = java.text.SimpleDateFormat("HH")
-//    return (sdf.format(java.util.Date(timestamp * 1000))).toInt()
+
 
     val sdf = java.text.SimpleDateFormat("HH", Locale.getDefault())
     sdf.timeZone = TimeZone.getTimeZone(PreferenceMaestro.chosenTimeZone)
@@ -139,20 +115,6 @@ fun unxtoDayandMonth(timestamp: Long): String {
     return sdf.format(java.util.Date(timestamp * 1000))
 }
 
-fun unxtoHoursAndMinutes(timestamp: Long): String {
-    val sdf = java.text.SimpleDateFormat("HH:mm", Locale.getDefault())
-    sdf.timeZone = TimeZone.getTimeZone(PreferenceMaestro.chosenTimeZone)
-    return sdf.format(java.util.Date(timestamp * 1000))
-
-//    var days = timestamp / 86400
-//    var hoursInSec = timestamp - (days * 86400)
-//    var hours = hoursInSec / 3600
-//    var minutesInSec =hoursInSec - (hours*3600)
-//    var minutes = minutesInSec / 60
-
-    //return "${hours}:${minutes}"
-}
-
 class MyXAxisValuesFormatter : IAxisValueFormatter {
     private var values : ArrayList<String>
     constructor(values: ArrayList<String>){
@@ -171,3 +133,28 @@ fun unxtoDateDEBUG(timestamp: Long): String {
     return (sdf.format(java.util.Date(timestamp * 1000)))
 }
 
+//fun chartDataHandler(arrayList: ArrayList<Float>, rangeX0 : Int, rangeX1 : Int): ArrayList<Float> {
+//    var arrayListOUTPUT : ArrayList<Float> = ArrayList()
+//    for (i in (arrayList.size*rangeX0)/5+1..(arrayList.size*rangeX1)/5){
+//        arrayListOUTPUT.add(arrayList.get(i))
+//
+//    }
+//
+//    Timber.i("vvv* $arrayListOUTPUT")
+//
+//    return arrayListOUTPUT
+//}
+
+fun unxtoHoursAndMinutes(timestamp: Long): String {
+    val sdf = java.text.SimpleDateFormat("HH:mm", Locale.getDefault())
+    sdf.timeZone = TimeZone.getTimeZone(PreferenceMaestro.chosenTimeZone)
+    return sdf.format(java.util.Date(timestamp * 1000))
+
+//    var days = timestamp / 86400
+//    var hoursInSec = timestamp - (days * 86400)
+//    var hours = hoursInSec / 3600
+//    var minutesInSec =hoursInSec - (hours*3600)
+//    var minutes = minutesInSec / 60
+
+    //return "${hours}:${minutes}"
+}

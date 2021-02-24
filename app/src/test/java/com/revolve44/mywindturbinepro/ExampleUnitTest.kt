@@ -14,4 +14,9 @@ class ExampleUnitTest {
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
     }
+
+//    @Test
+//    fun checkForecast_Engine(){
+//        assertEquals(0, getForecast(0F,0,0))
+//    }
 }

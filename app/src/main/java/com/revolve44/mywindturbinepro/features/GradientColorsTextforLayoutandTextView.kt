@@ -1,4 +1,4 @@
-package com.revolve44.mywindturbinepro.utils
+package com.revolve44.mywindturbinepro.features
 
 import android.animation.ArgbEvaluator
 import android.animation.ObjectAnimator
@@ -52,9 +52,7 @@ fun gradientAnimation2(uiElement: ImageView, color1: Int, color2: Int, duration:
     colorAnimation2.start()
 }
 
-fun randomName() = listOf(
-    "not tired?:)", "are you kidding?", "OK, I get it.", "all will be alright", "now i am tired"
-).random()
+
 
 fun listOfColor(num: Int) = listOf(
     Color.WHITE, Color.BLUE, Color.GREEN, Color.CYAN, Color.MAGENTA, Color.YELLOW, Color.RED

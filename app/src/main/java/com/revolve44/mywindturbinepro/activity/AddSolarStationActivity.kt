@@ -24,16 +24,18 @@ import com.revolve44.mywindturbinepro.fragments.MapFragment
 import kotlinx.android.synthetic.main.activity_add_station.*
 import timber.log.Timber
 
+
+/**
+ * This Activity needs for create solar station:
+ * set parameters of station (nominal power, coordinates, type of currency)
+ *
+ */
 class AddSolarStationActivity : AppCompatActivity() {
 
-    //lateinit var viewmodelAddSolarStation: ViewModelAddSolarStation
 
-    //lateinit var viewPager2 : ViewPager2
-    val titles = arrayOf("Map", "Characterisctics")
-    //lateinit var toCharacteristics : Button
-    lateinit var viewPager2 : ViewPager2
-    //lateinit var to_characteristics : Button
-    var mainActivity : MainActivity = MainActivity()
+    private val titles = arrayOf("Map", "Characterisctics")
+    private lateinit var viewPager2 : ViewPager2
+    private var mainActivity : MainActivity = MainActivity()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,13 +51,7 @@ class AddSolarStationActivity : AppCompatActivity() {
 
 
 
-//        toCharacteristics = findViewById(R.id.to_characteristics)
         viewPager2 = findViewById(R.id.viewPager2)
-
-        //viewModelAddSolarStation.addSolarStation(SolarStation(12,144,"HORRAYY!!"))
-
-
-
 
         viewPager2.adapter = ViewPagerFragmentAdapter(this)
         //disabling swipe in viewpager
@@ -67,7 +63,7 @@ class AddSolarStationActivity : AppCompatActivity() {
         { tab: TabLayout.Tab, position: Int ->
             tab.setText(titles.get(position))
         }.attach()
-        //to_characteristics.setOnClickListener { }
+
 
     }
 
@@ -104,11 +100,4 @@ class AddSolarStationActivity : AppCompatActivity() {
         }
 
     }
-
-
-
-//    override fun onBackPressed() {
-//        viewPager2.currentItem = 1
-//        //super.onBackPressed()
-//    }
 }

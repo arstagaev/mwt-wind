@@ -11,13 +11,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.revolve44.mywindturbinepro.WindTurbineApp
-import com.revolve44.mywindturbinepro.forecastmachine.getForecast
+import com.revolve44.mywindturbinepro.features.getForecast
 import com.revolve44.mywindturbinepro.models.ForecastPer3hr
 import com.revolve44.mywindturbinepro.repository.WindRepository
 import com.revolve44.mywindturbinepro.storage.PreferenceMaestro
 import com.revolve44.mywindturbinepro.utils.Resource
-import com.revolve44.mywindturbinepro.utils.getTimeZoneGMTstyle
-import com.revolve44.mywindturbinepro.utils.unixtoHumanTime
+import com.revolve44.mywindturbinepro.features.getTimeZoneGMTstyle
+import com.revolve44.mywindturbinepro.features.unixtoHumanTime
 import com.revolve44.postmakermassive.models.beta.FiveDaysForecastMain
 import kotlinx.coroutines.launch
 import retrofit2.Response

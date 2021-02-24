@@ -1,4 +1,4 @@
-package com.revolve44.mywindturbinepro.utils
+package com.revolve44.mywindturbinepro.features
 
 import com.revolve44.mywindturbinepro.ext.plusString
 import com.revolve44.mywindturbinepro.storage.PreferenceMaestro
@@ -56,22 +56,6 @@ fun scaleOfkWh(watts : Int, roundedNumbers : Boolean) : String{
             return newFormattedWatts.plusString("MWh")
         }
 
-
-
-//        if (watts>999){
-//            newFormattedWatts = watts/1000
-//            return newFormattedWatts.plusString("kWh")
-//
-//        }else if (watts>1000000){
-//            newFormattedWatts = watts/1000000
-//            return newFormattedWatts.plusString("MWh")
-//
-//        }else{
-////        newFormattedWatts = roundTo2decimials(watts.toFloat()/1000)
-//            return watts.plusString("Wh")
-//
-//        }
-
     }else{
 
         var newFormattedWatts = 0F
@@ -88,18 +72,6 @@ fun scaleOfkWh(watts : Int, roundedNumbers : Boolean) : String{
             return watts.plusString("Wh")
         }
 
-//        var newFormattedWatts = 0F
-//        if (watts>999){
-//            newFormattedWatts = roundTo2decimials(watts.toFloat()/1000)
-//            return newFormattedWatts.plusString("kWh")
-//
-//        }else if (watts>1000000){
-//            newFormattedWatts = roundTo2decimials(watts.toFloat()/1000000)
-//            return newFormattedWatts.plusString("MWh")
-//        }else{
-////        newFormattedWatts = roundTo2decimials(watts.toFloat()/1000)
-//            return watts.plusString("Wh")
-//        }
     }
 
 

@@ -23,25 +23,13 @@ import java.lang.Exception
 
 class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback,
     GoogleMap.OnMarkerDragListener {
-    // Store instance variables
-   // private var title: String? = null
-   // private var page = 0
     private var mMap: GoogleMap? = null
-   // var lol: LatLng? = null
     var marker: Marker? = null
     var latitude = 0.0
     var longitude = 0.0
-//    var NominalPower = 0.0f
-//    var Latitude: String? = null
-//    var Longitude: String? = null
     var check = false
     var MYLOCATION = LatLng(latitude, longitude)
-//    var Loader: LinearLayout? = null
-//    //var textView: TextView? = null
-//    var inputnominalpower: EditText? = null
-//    var tempFahrenheit = false
-//    var checkImperial: CheckBox? = null
-//    lateinit var toCharacteristics : Button
+
     lateinit var to_characteristics : Button
 
 
@@ -62,20 +50,8 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback,
 
     }
 
-    // Inflate the view for the fragment based on layout XML
-//    override fun onCreateView(
-//        inflater: LayoutInflater, container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View? {
-//        val view =
-//            inflater.inflate(R.layout.fragmentlocation_map, container, false)
-//        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-//
-//        return view
-//    }
-    ////////////////////
-    /** ШАБЛОННЫЙ ГУГОЛОВСКИЙ КОМЕНТАРИЙ ПО ПОВОДУ ИХ КАРТ, РЕЛАКС. донт ворри
-     * просто оставил почитать
+    /** ШАБЛОННЫЙ ГУГОЛОВСКИЙ КОМЕНТАРИЙ ПО ПОВОДУ ИХ КАРТ, РЕЛАКС.
+     *
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
      * This is where we can add markers or lines, add listeners or move the camera. In this case,
@@ -171,27 +147,5 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback,
         Timber.i("attach Called")
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Timber.i("oncreate Called")
-    }
-override fun onResume() {
-    super.onResume()
-    Timber.i("onResume Called")
-}
 
-    override fun onPause() {
-        super.onPause()
-        Timber.i("onPause Called")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Timber.i("onStop Called")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Timber.i("onDestroy Called")
-    }
 }

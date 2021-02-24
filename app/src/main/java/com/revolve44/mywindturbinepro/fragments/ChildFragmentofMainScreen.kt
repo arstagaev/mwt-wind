@@ -27,11 +27,9 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.revolve44.mywindturbinepro.R
 import com.revolve44.mywindturbinepro.activity.MainActivity
-import com.revolve44.mywindturbinepro.forecastmachine.ForecastToWindSpeed
-import com.revolve44.mywindturbinepro.forecastmachine.getAverageNumOfArray
+import com.revolve44.mywindturbinepro.features.*
 import com.revolve44.mywindturbinepro.models.FirstChartDataTransitor
 import com.revolve44.mywindturbinepro.storage.PreferenceMaestro
-import com.revolve44.mywindturbinepro.utils.*
 import com.revolve44.mywindturbinepro.utils.Constants.Companion.DUAL_INDICATOR_SIZEOFFACTORS
 import com.revolve44.mywindturbinepro.utils.Constants.Companion.IS_PRO_VERSION
 import com.revolve44.mywindturbinepro.viewmodels.MainScreenViewModel
@@ -50,7 +48,9 @@ import timber.log.Timber
 import kotlin.collections.ArrayList
 import kotlin.math.roundToInt
 
-
+/**
+ * Fragment include 5 charts + module of max wind speed
+ */
 class ChildFragmentofMainScreen : Fragment(R.layout.fragment_child_of_main_screen_fragment) {
 
     private val chart: LineChart? = null
@@ -111,8 +111,7 @@ class ChildFragmentofMainScreen : Fragment(R.layout.fragment_child_of_main_scree
     var sumOfFifthhart = 0
 
     private fun switchNightMode(){
-        // ColorFilter filter = new LightingColorFilter( Color.BLACK, Color.BLACK);
-        //var filter : ColorFilter = ColorFilter()
+
         if (PreferenceMaestro.isNightNode){
             signWithCharts.setCardBackgroundColor(ContextCompat.getColor(requireActivity(), R.color.black_spoke))
 //            signSecond.setCardBackgroundColor(ContextCompat.getColor(requireActivity(), R.color.black_spoke))
@@ -198,7 +197,6 @@ class ChildFragmentofMainScreen : Fragment(R.layout.fragment_child_of_main_scree
             PreferenceMaestro.isNightNode = !PreferenceMaestro.isNightNode
 
             switchNightMode()
-
             //nowNightMode = true
         }
 
@@ -400,15 +398,7 @@ class ChildFragmentofMainScreen : Fragment(R.layout.fragment_child_of_main_scree
             leftLineChartSetup(lineChart2, legend, chartDataSort(arrayDate, forecastArray, 0))
             /**init 3rd or right chart */
             rightLineChartSetup(lineChart3, legend, chartDataSort(arrayDate, forecastArray, 1))
-//            /**
-//             * PRO version below
-//             */
-//            /**init chart 4  */
-//            fourthLineChartSetup(lineChart4,legend,chartDatasort(arrayDate,forecastArray,2))
-//            /**init chart 5 */
-//            fiveLineChartSetup(lineChart5,legend,chartDatasort(arrayDate,forecastArray,3))
 
-            // Timber.i("www ${secondChartDataHandler(arrayDate)}")
             getSumOfPowerPerWeek()
         }catch (e: Exception){
             Timber.e("vvv3   ${e.message}")
@@ -555,10 +545,12 @@ class ChildFragmentofMainScreen : Fragment(R.layout.fragment_child_of_main_scree
 
         maxWindSpeedto24hr = arrayData.maxOrNull()!!
         sumOfFirstChart = arrayData.sum().toInt()
-        topChartDescription.text = getString(R.string.mainscreen_chart_title_forecast20hr)+" (Σ= ${scaleOfkWh(
+        topChartDescription.text = getString(R.string.mainscreen_chart_title_forecast20hr)+" (Σ= ${
+            scaleOfkWh(
                 arrayData.sum().toInt(),
                 true
-        )})"
+        )
+        })"
 
     }
 
@@ -648,10 +640,12 @@ class ChildFragmentofMainScreen : Fragment(R.layout.fragment_child_of_main_scree
 
         maxWindSpeedforTomorrow = arrayData.maxOrNull()!!
         sumOfSecondChart = arrayData.sum().toInt()
-        leftChartDescription.text = getString(R.string.mainscreen_chart_title_forecasttomorrow) +"\n(Σ= ${scaleOfkWh(
+        leftChartDescription.text = getString(R.string.mainscreen_chart_title_forecasttomorrow) +"\n(Σ= ${
+            scaleOfkWh(
                 arrayData.sum().toInt(),
                 true
-        )}): ${PreferenceMaestro.leftChartMonthandDay}"
+        )
+        }): ${PreferenceMaestro.leftChartMonthandDay}"
 
 
     }
@@ -753,10 +747,12 @@ class ChildFragmentofMainScreen : Fragment(R.layout.fragment_child_of_main_scree
 
         maxWindSpeedforAfterTomorrow = arrayData.maxOrNull()!!
         sumOfThirdChart = arrayData.sum().toInt()
-        rightChartDescription.text = getString(R.string.mainscreen_chart_title_forecastaftertomorrow)+" \n(Σ= ${scaleOfkWh(
+        rightChartDescription.text = getString(R.string.mainscreen_chart_title_forecastaftertomorrow)+" \n(Σ= ${
+            scaleOfkWh(
                 arrayData.sum().roundToInt(),
                 true
-        )}): ${PreferenceMaestro.rightChartMonthandDay}"
+        )
+        }): ${PreferenceMaestro.rightChartMonthandDay}"
 
     }
 

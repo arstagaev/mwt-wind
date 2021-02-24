@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:background="#000000">
 
-    <com.revolve44.mywindturbinepro.utils.LockableScrollView
+    <com.revolve44.mywindturbinepro.features.LockableScrollView
         android:id="@+id/scrollViewFromFragmentConfirmStation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -306,7 +306,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-    </com.revolve44.mywindturbinepro.utils.LockableScrollView>
+    </com.revolve44.mywindturbinepro.features.LockableScrollView>
 
 
 
