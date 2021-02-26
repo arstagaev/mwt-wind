@@ -11,7 +11,7 @@
         android:id="@+id/mainFragment"
         android:name="com.revolve44.mywindturbinepro.fragments.MainScreenFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_mainscreen" >
+        tools:layout="@layout/deprecated_fragment_mainscreen" >
         <action
             android:id="@+id/action_mainFragment_to_calibrationFragment"
             app:destination="@id/calibrationFragment" />

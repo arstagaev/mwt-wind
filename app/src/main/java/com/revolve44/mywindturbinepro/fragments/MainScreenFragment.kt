@@ -6,10 +6,10 @@ import android.content.Context
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.helper.widget.Flow
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
@@ -51,26 +51,7 @@ import kotlin.collections.ArrayList
 
 class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickListener, SwipeRefreshLayout.OnRefreshListener { //OnClickListener
 
-//    private lateinit var navController: NavController
-//    private lateinit var viewmodel : MainScreenViewModel
-//
-//    private var arrayX : ArrayList<Any> = ArrayList()
-//
-//    private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
-//
-//    lateinit var lastUpdateDataIndicator : TextView
-////=======
-//    lateinit var tvLastUpdates : TextView
-//
-//    lateinit var energyforecastindicator : TickerView
-//    lateinit var moneyforecastindicator : TickerView
-//    lateinit var dualIndicator : LinearLayout
-//
-//    lateinit var mainscreen_back : RelativeLayout
-//    lateinit var currentCity : TextView
-//    lateinit var leftdescriptionOfDualIndicator: TextView
-//    lateinit var currencyIndicator: TextView
-//    var a = 0
+
     private lateinit var navController: NavController
     private lateinit var viewmodel : MainScreenViewModel
 
@@ -78,16 +59,16 @@ class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickL
 
     private lateinit var mSwipeRefreshLayout: SwipeRefreshLayout
 
-    private lateinit var lastUpdateDataIndicator : TextView
+    //private lateinit var lastUpdateDataIndicator : TextView
     private lateinit var dayIndicator : TextView
 
     private lateinit var tvLastUpdates : TextView
 
     private lateinit var energyforecastindicator : TickerView
     private lateinit var moneyforecastindicator : TickerView
-    private lateinit var dualIndicator : LinearLayout
+    private lateinit var dualIndicator : Flow //
+    private lateinit var mainscreen_back : ConstraintLayout //
 
-    private lateinit var mainscreen_back : RelativeLayout
     private lateinit var currentCity : TextView
     private lateinit var leftdescriptionOfDualIndicator: TextView
     private lateinit var currencyIndicator: TextView
@@ -105,30 +86,25 @@ class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickL
         insertNestedFragment()
 
 
-        lastUpdateDataIndicator = view.findViewById<TextView>(R.id.lastUpdatedtv)
+        //lastUpdateDataIndicator = view.findViewById<TextView>(R.id.lastUpdatedtv)
 
 
         tvLastUpdates = view.findViewById<TextView>(R.id.lastUpdatedtv)
         energyforecastindicator = view.findViewById(R.id.energyforecastindicator)
         moneyforecastindicator = view.findViewById(R.id.moneyforecastindicator)
-        dualIndicator = view.findViewById(R.id.dual_indicator)
+        // test
+        dualIndicator = view.findViewById(R.id.flow_dual_indicators)
+        //
         leftdescriptionOfDualIndicator = view.findViewById(R.id.leftdescriptionOfDualIndicator)
         currencyIndicator = view.findViewById(R.id.currencyIndicator)
         dayIndicator = view.findViewById(R.id.day_indicator)
-        mainscreen_back = view.findViewById<RelativeLayout>(R.id.mainscreen_back)
-
+        //test
+        //mainscreen_back = view.findViewById<RelativeLayout>(R.id.mainscreen_back)
+        mainscreen_back = view.findViewById(R.id.mains)
+        //
         currentCity = view.findViewById(R.id.currentCity)
 
         swipeRefreshTools(view)
-
-        //var forecastArray :ArrayList<Float> = ArrayList()
-//        var fragment2 = requireActivity().supportFragmentManager.findFragmentByTag(ChildFragmentofMainScreen.FRAGMENT_TAG2)
-//        fragment2
-
-        //        var fragment = .findFragmentByTag(MainScreenFragment.FRAGMENT_TAG)
-//        fragment.
-
-
 
 
         viewmodel.requestFor5days.observe(viewLifecycleOwner, Observer { response ->
@@ -316,10 +292,10 @@ class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickL
                 tvLastUpdates.text = PreferenceMaestro.lastUpdateDate
             }
             Status.ERROR -> {
-                tvLastUpdates.text = PreferenceMaestro.lastUpdateDate
+                //tvLastUpdates.text = PreferenceMaestro.lastUpdateDate
             }
             Status.LOADING -> {
-                tvLastUpdates.text = PreferenceMaestro.lastUpdateDate
+                //tvLastUpdates.text = PreferenceMaestro.lastUpdateDate
             }
         }
     }
@@ -460,7 +436,8 @@ class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickL
 
     private fun swipeRefreshTools(view: View) {
 
-        mSwipeRefreshLayout = view.findViewById(R.id.swipecontainer)
+        //mSwipeRefreshLayout = view.findViewById(R.id.swipecontainer)
+        mSwipeRefreshLayout = view.findViewById(R.id.swipe_con)
         mSwipeRefreshLayout.setOnRefreshListener(this as SwipeRefreshLayout.OnRefreshListener)
 
         mSwipeRefreshLayout.nestedScrollAxes

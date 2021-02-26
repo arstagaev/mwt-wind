@@ -99,6 +99,10 @@ class MainScreenViewModel(app: Application, val repo: WindRepository) : AndroidV
                     sunset = resultResponse.city.sunset.toLong()
                     timeZone = resultResponse.city.timezone.toLong()
 
+                    PreferenceMaestro.sunriseL = sunrise
+                    PreferenceMaestro.sunsetL = sunset
+                    PreferenceMaestro.timezoneL = timeZone
+
                     //get time zone in human style
                     PreferenceMaestro.chosenTimeZone = getTimeZoneGMTstyle(timeZone)
                     //get name of city

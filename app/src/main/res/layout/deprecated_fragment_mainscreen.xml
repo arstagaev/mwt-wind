@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainscreen_back"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#004FD5">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipecontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <LinearLayout
+                        android:id="@+id/dual_indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <com.robinhood.ticker.TickerView
+                                android:id="@+id/energyforecastindicator"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textSize="60sp"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/white"
+                                app:ticker_animationDuration="3000"
+                                app:ticker_animateMeasurementChange="true"
+                                app:ticker_defaultCharacterList="number"
+                                tools:ignore="RtlCompat">
+
+                            </com.robinhood.ticker.TickerView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+                            <com.robinhood.ticker.TickerView
+                                android:id="@+id/moneyforecastindicator"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textSize="60sp"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/white"
+                                app:ticker_animationDuration="3000"
+                                app:ticker_animateMeasurementChange="true"
+                                app:ticker_defaultCharacterList="number"
+                                tools:ignore="RtlCompat">
+
+                            </com.robinhood.ticker.TickerView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:layout_editor_absoluteX="0dp">
+                                <TextView
+                                    android:id="@+id/leftdescriptionOfDualIndicator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="forecast output, kWh"
+                                    android:textColor="@color/black"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold">
+                                </TextView>
+                                <TextView
+                                    android:id="@+id/currencyIndicator"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="you will save, $"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    android:layout_weight="1">
+                                </TextView>
+
+                            </LinearLayout>
+
+
+
+
+
+                            <TextView
+                                android:id="@+id/lastUpdatedtv"
+                                android:layout_width="150dp"
+                                android:layout_height="23dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginRight="4dp"
+                                android:gravity="center"
+                                android:hint="Updated: --/-- --:--"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="1.0">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/day_indicator"
+                                android:layout_width="60dp"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="2dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/lastUpdatedtv"
+                                app:layout_constraintHorizontal_bias="0.522"
+                                android:textColor="@color/greenx"
+                                android:text="night"
+                                android:gravity="center"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/currentCity">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/currentCity"
+                                android:layout_width="150dp"
+                                android:layout_height="23dp"
+                                android:gravity="center"
+                                android:hint="City: New York"
+                                android:textSize="10sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent">
+
+                            </TextView>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <FrameLayout
+                        android:id="@+id/child_fragment_container_old"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00E1E1E1">
+
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</RelativeLayout>
