@@ -9,7 +9,7 @@ class ViewModelProviderFactory(
     private val app :Application,
     private val repository: WindRepository
 ) : ViewModelProvider.Factory {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return MainScreenViewModel(app, repository) as T
     }
 }

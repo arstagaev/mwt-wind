@@ -27,7 +27,6 @@ import com.revolve44.mywindturbine.utils.blinkATextView
 import com.revolve44.mywindturbine.utils.listOfColor
 import com.revolve44.mywindturbine.viewmodels.MainScreenViewModel
 import com.revolve44.mywindturbine.viewmodels.ViewModelProviderFactory
-import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
@@ -44,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainNavDrawer: DrawerLayout
     private lateinit var toNavDrawer: ImageView
     private lateinit var powerOutputIndicator: ImageView
+    private lateinit var main_drawer_layout: DrawerLayout
     //private lateinit var header_drawer_title : TextView
 
     private fun firstLaunch() {
@@ -60,9 +60,15 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.AppTheme) // for splash screen [1]
         firstLaunch()
 
+        val repository = WindRepository(application)
+        val viewModelProviderFactory = ViewModelProviderFactory(application, repository)
+        mainScreenViewModel = ViewModelProvider(this, viewModelProviderFactory).get(MainScreenViewModel::class.java)
+
         setContentView(R.layout.activity_main)
         //supportActionBar?.setDisplayHomeAsUpEnabled(false)
         //supportActionBar?.
+
+        main_drawer_layout = findViewById(R.id.main_drawer_layout)
         initNavigation()
         initToggleInActionBar()
         textColorChanged()
@@ -70,9 +76,6 @@ class MainActivity : AppCompatActivity() {
 //        initActionBarandDrawerView()
 //        initNavController()
 
-        val repository = WindRepository(application)
-        val viewModelProviderFactory = ViewModelProviderFactory(application, repository)
-        mainScreenViewModel = ViewModelProvider(this, viewModelProviderFactory).get(MainScreenViewModel::class.java)
 
 
     }

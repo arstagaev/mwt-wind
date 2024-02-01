@@ -21,7 +21,7 @@ import com.revolve44.mywindturbine.viewmodels.ViewModelAddSolarStation
 //import com.revolve44.solarpanelx.fragment.LastConfirmFragment
 import com.revolve44.mywindturbine.fragments.MapFragment
 //import com.revolve44.solarpanelx.viewmodels.ViewModelAddSolarStation
-import kotlinx.android.synthetic.main.activity_add_station.*
+//import kotlinx.android.synthetic.main.activity_add_station.*
 import timber.log.Timber
 
 class AddSolarStationActivity : AppCompatActivity() {
@@ -32,6 +32,7 @@ class AddSolarStationActivity : AppCompatActivity() {
     val titles = arrayOf("Map", "Characterisctics")
     //lateinit var toCharacteristics : Button
     lateinit var viewPager2 : ViewPager2
+    lateinit var tab_layout : TabLayout
     //lateinit var to_characteristics : Button
     var mainActivity : MainActivity = MainActivity()
 
@@ -51,6 +52,7 @@ class AddSolarStationActivity : AppCompatActivity() {
 
 //        toCharacteristics = findViewById(R.id.to_characteristics)
         viewPager2 = findViewById(R.id.viewPager2)
+        tab_layout = findViewById(R.id.tab_layout)
 
         //viewModelAddSolarStation.addSolarStation(SolarStation(12,144,"HORRAYY!!"))
 

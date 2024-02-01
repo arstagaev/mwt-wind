@@ -50,7 +50,7 @@ import kotlin.collections.ArrayList
 class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickListener, SwipeRefreshLayout.OnRefreshListener { //OnClickListener
 
     private lateinit var navController: NavController
-    private lateinit var viewmodel : MainScreenViewModel
+    private var viewmodel : MainScreenViewModel? = null
 
     private var arrayX : ArrayList<Any> = ArrayList()
 
@@ -75,7 +75,7 @@ class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickL
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewmodel =(activity as MainActivity).mainScreenViewModel
+        viewmodel = (activity as MainActivity).mainScreenViewModel
 
         navController = findNavController() //Initialising navController
 
@@ -102,7 +102,7 @@ class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickL
 
 
 
-        viewmodel.requestFor5days.observe(viewLifecycleOwner, Observer { response ->
+        viewmodel?.requestFor5days?.observe(viewLifecycleOwner, Observer { response ->
             Timber.i("zzz " + response.message + " data:" + response.data)
             when (response) {
                 is Resource.Success -> {
@@ -300,7 +300,7 @@ class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickL
 
     override fun onRefresh() {
         //mSwipeRefreshLayout.isRefreshing = true
-        viewmodel.manualRequest()
+        viewmodel?.manualRequest()
     }
 
     // need for timely refresh of indicators
