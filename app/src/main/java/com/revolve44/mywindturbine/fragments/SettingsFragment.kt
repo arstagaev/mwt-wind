@@ -14,7 +14,7 @@ import android.widget.ListView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.revolve44.mywindturbine.R
-import com.revolve44.mywindturbine.activity.AddSolarStationActivity
+import com.revolve44.mywindturbine.activity.AddWindStationActivity
 import com.revolve44.mywindturbine.activity.MainActivity
 import timber.log.Timber
 
@@ -61,7 +61,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             //Toast.makeText(activity,"pos $position",Toast.LENGTH_SHORT).show()
             when(position){
                 0 -> {
-                    val intent = Intent(activity, AddSolarStationActivity::class.java)
+                    val intent = Intent(activity, AddWindStationActivity::class.java)
                     startActivity(intent)
                 }
                 1 -> goToUrl("https://play.google.com/store/apps/dev?id=8066230504463138782&hl=en_US&gl=US")

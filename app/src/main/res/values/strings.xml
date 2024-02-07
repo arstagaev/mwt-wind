@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Wind Turbine</string>
+
+
+    <string name="shortcut_wind">Wind</string>
+    <string name="shortcut_wind_turbine">Wind Turbine</string>
 </resources>

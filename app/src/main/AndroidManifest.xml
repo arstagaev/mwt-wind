@@ -37,8 +37,29 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+            <!-- Required reference to App Actions shortcuts.xml file. -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+
+
         </activity>
-        <activity android:name="com.revolve44.mywindturbine.activity.AddSolarStationActivity" />
+        <activity android:name=".activity.AddWindStationActivity"
+            android:exported="true">
+
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--            </intent-filter>-->
+<!--            &lt;!&ndash; Required reference to App Actions shortcuts.xml file. &ndash;&gt;-->
+<!--            <meta-data-->
+<!--                android:name="android.app.shortcuts"-->
+<!--                android:resource="@xml/shortcuts" />-->
+
+        </activity>
     </application>
 
 </manifest>

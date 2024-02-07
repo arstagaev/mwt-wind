@@ -11,7 +11,7 @@ import android.widget.AdapterView.OnItemSelectedListener
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.revolve44.mywindturbine.R
-import com.revolve44.mywindturbine.activity.AddSolarStationActivity
+import com.revolve44.mywindturbine.activity.AddWindStationActivity
 import com.revolve44.mywindturbine.activity.MainActivity
 import com.revolve44.mywindturbine.storage.PreferenceMaestro
 import com.revolve44.mywindturbine.utils.LockableScrollView
@@ -229,7 +229,7 @@ class LastConfirmFragment : Fragment(R.layout.fragment_confirm_station) {
 
             val intent = Intent(activity, MainActivity::class.java)
             startActivity(intent)
-            (activity as AddSolarStationActivity).finish()
+            (activity as AddWindStationActivity).finish()
 
 
         }catch (e: Exception){

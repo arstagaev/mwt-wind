@@ -20,7 +20,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/montserrat"
                 android:gravity="center"
-                android:text="Please set location \nof your PV station"
+                android:text="Please set location \nof your Wind turbine"
                 android:textColor="@color/white"
                 android:textSize="16sp">
 

@@ -6,7 +6,7 @@
     android:background="#FF0000"
     android:orientation="vertical"
 
-    tools:context=".activity.AddSolarStationActivity"
+    tools:context=".activity.AddWindStationActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout

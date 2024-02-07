@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <capability android:name="actions.intent.OPEN_APP_FEATURE">
+        <intent
+            android:targetPackage="com.revolve44.mywindturbine"
+            android:targetClass="com.revolve44.mywindturbine.activity.MainActivity">
+            <parameter
+                android:name="feature"
+                android:key="featureParam"/>
+        </intent>
+    </capability>
+
+    <shortcut
+        android:shortcutId="wind"
+        android:shortcutShortLabel="@string/shortcut_wind"
+        android:shortcutLongLabel="@string/shortcut_wind_turbine"
+        android:enabled="true">
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding
+                android:key="feature"
+                android:value="featureParam"/>
+        </capability-binding>
+    </shortcut>
+</shortcuts>

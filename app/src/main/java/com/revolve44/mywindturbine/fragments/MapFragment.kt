@@ -13,7 +13,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.revolve44.mywindturbine.R
-import com.revolve44.mywindturbine.activity.AddSolarStationActivity
+import com.revolve44.mywindturbine.activity.AddWindStationActivity
 import com.revolve44.mywindturbine.storage.PreferenceMaestro
 //import com.revolve44.solarpanelx.R
 //import com.revolve44.solarpanelx.activity.AddSolarStationActivity
@@ -31,17 +31,8 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback,
     var marker: Marker? = null
     var latitude = 0.0
     var longitude = 0.0
-//    var NominalPower = 0.0f
-//    var Latitude: String? = null
-//    var Longitude: String? = null
     var check = false
     var MYLOCATION = LatLng(latitude, longitude)
-//    var Loader: LinearLayout? = null
-//    //var textView: TextView? = null
-//    var inputnominalpower: EditText? = null
-//    var tempFahrenheit = false
-//    var checkImperial: CheckBox? = null
-//    lateinit var toCharacteristics : Button
     lateinit var to_characteristics : Button
 
 
@@ -55,7 +46,7 @@ class MapFragment : Fragment(R.layout.fragment_map), OnMapReadyCallback,
 
         //toCharacteristics = view.findViewById(R.id.to_characteristics)
         to_characteristics.setOnClickListener {
-            (activity as AddSolarStationActivity).gotoSecondPage() }
+            (activity as AddWindStationActivity).gotoSecondPage() }
 
 
 

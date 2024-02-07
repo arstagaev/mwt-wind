@@ -1,15 +1,12 @@
 package com.revolve44.mywindturbine.activity
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.ColorFilter
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
@@ -45,18 +42,50 @@ class MainActivity : AppCompatActivity() {
     private lateinit var powerOutputIndicator: ImageView
     private lateinit var main_drawer_layout: DrawerLayout
     //private lateinit var header_drawer_title : TextView
+    private fun Intent.handleIntent() {
+        //println("Intent >>> ${action.toString()} ${this.getStringExtra("name")}")
+        when (action) {
 
+            // When the BII is matched, Intent.Action_VIEW will be used
+            Intent.ACTION_VIEW -> {
+                when(this.getStringExtra("name")) {
+                    "Station", "STATION", "station" -> {
+                        val intent = Intent(this@MainActivity, AddWindStationActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else -> {  }
+                }
+
+
+
+            }
+            // Otherwise start the app as you would normally do.
+            else -> println(">>>> Intent. ${this.toString()}")
+        }
+    }
     private fun firstLaunch() {
         if (PreferenceMaestro.firstStart) {
             //viewModel.forecastPower.value = 0f // set zero because needed set PV station characteristics
 
-            val intent = Intent(this, AddSolarStationActivity::class.java)
+            val intent = Intent(this, AddWindStationActivity::class.java)
             startActivity(intent)
         }
+    }
+    /**
+     * Handle new intents that are coming while the activity is on foreground since we set the
+     * launchMode to be singleTask, avoiding multiple instances of this activity to be created.
+     *
+     * See [launchMode](https://developer.android.com/guide/topics/manifest/activity-element#lmode)
+     */
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        intent?.handleIntent()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Handle the intent this activity was launched with.
+        intent?.handleIntent()
         setTheme(R.style.AppTheme) // for splash screen [1]
         firstLaunch()
 
@@ -230,28 +259,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-
-
-//    private fun initActionBarandDrawerView() {
-//
-//
-//
-//        //mainNavDrawer
-//        toolbar.navigationIcon = null
-//
-//
-//
-//        titleofActionBar = findViewById(R.id.actionbarTitle)
-//
-//        val navigationView: NavigationView = findViewById<View>(R.id.main_navigation_view) as NavigationView
-//        val headerView: View = navigationView.inflateHeaderView(R.layout.navigation_header)
-//        headerOfDrawer = headerView.findViewById(R.id.header_of_drawer)
-//        headerDrawerTitle = headerView.findViewById(R.id.header_drawer_title)
-//        chosenStation = headerView.findViewById(R.id.chosenPVStation)
-//
-//
-//    }
 
     fun showProgressBar(labelOfActionBar: String){
         titleofActionBar = findViewById(R.id.actionbarTitle)
