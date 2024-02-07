@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.revolve44.mywindturbine">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -38,8 +39,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <intent-filter>
+            <intent-filter tools:targetApi="m">
                 <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="com.revolve44.mywindturbine"
+                    android:scheme="https" />
             </intent-filter>
             <!-- Required reference to App Actions shortcuts.xml file. -->
             <meta-data

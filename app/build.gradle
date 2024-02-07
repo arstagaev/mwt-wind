@@ -16,8 +16,8 @@ android {
         applicationId "com.revolve44.mywindturbine"
         minSdkVersion 22
         targetSdkVersion 34
-        versionCode 19
-        versionName "3.4"
+        versionCode 20
+        versionName "3.5"
 
         //(if # methods > 65536) => true
         multiDexEnabled true

@@ -20,6 +20,7 @@ import com.google.android.material.navigation.NavigationView
 import com.revolve44.mywindturbine.R
 import com.revolve44.mywindturbine.repository.WindRepository
 import com.revolve44.mywindturbine.storage.PreferenceMaestro
+import com.revolve44.mywindturbine.utils.Constants.Companion.isOpenedByAssistant
 import com.revolve44.mywindturbine.utils.blinkATextView
 import com.revolve44.mywindturbine.utils.listOfColor
 import com.revolve44.mywindturbine.viewmodels.MainScreenViewModel
@@ -48,6 +49,8 @@ class MainActivity : AppCompatActivity() {
 
             // When the BII is matched, Intent.Action_VIEW will be used
             Intent.ACTION_VIEW -> {
+                isOpenedByAssistant = true
+                //Toast.makeText(applicationContext, "This app opened from assistant")
                 when(this.getStringExtra("name")) {
                     "Station", "STATION", "station" -> {
                         val intent = Intent(this@MainActivity, AddWindStationActivity::class.java)
@@ -55,12 +58,12 @@ class MainActivity : AppCompatActivity() {
                     }
                     else -> {  }
                 }
-
-
-
             }
             // Otherwise start the app as you would normally do.
-            else -> println(">>>> Intent. ${this.toString()}")
+            else -> {
+                println(">>>> Intent. ${this.toString()}")
+                isOpenedByAssistant = false
+            }
         }
     }
     private fun firstLaunch() {

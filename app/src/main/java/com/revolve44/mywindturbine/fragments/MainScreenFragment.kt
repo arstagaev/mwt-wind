@@ -3,6 +3,7 @@ package com.revolve44.mywindturbine.fragments
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
@@ -21,6 +22,7 @@ import com.revolve44.mywindturbine.activity.MainActivity
 import com.revolve44.mywindturbine.fragments.ChildFragmentofMainScreen
 import com.revolve44.mywindturbine.storage.PreferenceMaestro
 import com.revolve44.mywindturbine.utils.*
+import com.revolve44.mywindturbine.utils.Constants.Companion.isOpenedByAssistant
 import com.revolve44.mywindturbine.viewmodels.MainScreenViewModel
 //import com.revolve44.solarpanelx.activity.MainActivity
 //import com.revolve44.solarpanelx.R
@@ -166,6 +168,7 @@ class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickL
         }
         mainscreen_back = view.findViewById<RelativeLayout>(R.id.mainscreen_back)
 
+
         //gradientAnimation(mainscreen_back,resources.getColor(R.color.black_night),resources.getColor(R.color.day_sun_zenith),0,3200)
     }
 
@@ -306,8 +309,14 @@ class MainScreenFragment : Fragment(R.layout.fragment_mainscreen), View.OnClickL
     // need for timely refresh of indicators
     override fun onResume() {
         super.onResume()
+        if (isOpenedByAssistant) {
+            mainscreen_back.setBackgroundColor(Color.LTGRAY)
+        } else {
+            mainscreen_back.setBackgroundColor(Color.parseColor("#004FD5"))
+        }
         runTwoIndicators(1)
         setCurrentCity()
+
     }
 
     override fun onAttach(context: Context) {

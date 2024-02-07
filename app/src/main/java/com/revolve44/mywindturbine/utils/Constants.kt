@@ -6,5 +6,7 @@ class Constants {
         const val API_KEY = "ac79fea59e9d15377b787a610a29b784"
 
         const val DUAL_INDICATOR_SIZEOFFACTORS = 32
+
+        var isOpenedByAssistant = false
     }
 }
